@@ -1,29 +1,257 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <h2>과목별 참고도서 목록</h2>
-        <ul>
-            <li>IT 기술의 이해</li>
-            <ol>
-                <li>컴퓨터와 IT기술의 이해</li>
-                <li>Understanding Computers 115th Ed.</li>
-                <li>Discovering Computers</li>
-            </ol>
-            <li>웹프로그래밍</li>
-            <ol>
-                <li>HTML5 웹프로그래밍 입문</li>
-                <li>소셜미디어 시대의 인터넷 이해</li>
-                <li> What Is HTML5?</li>
-            </ol>
-        </ul>
-        <h2>지정도서</h2>
-        <dl>
-            <dt>지정도서 서비스란?</dt>
-            <dd>수업에 필요한 주교재 및 참고문헌 등의 필수도서를 도서관 1층 대출..
-                별도로 비치하여 관리하는 제도</dd>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>admin04g - 개인 이력서</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="profile-summary">
+        <div class="title-group">
+          <h1 class="nickname">admin04g</h1>
+          <p class="affiliation">상명대학교 소프트웨어학과 3학년</p>
+        </div>
+        <p class="intro-line">웹프로그래밍과 인공지능 기술을 탐구하며 사용자 친화적인 웹 서비스를 만듭니다.</p>
+      </div>
+      <div class="contact-channel">
+        <a href="https://github.com/admin04g" class="github-link" target="_blank" rel="noopener noreferrer">GitHub 프로필 (@admin04g)</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section id="achievements" class="card-section">
+      <div class="section-header">
+        <h2>실적 목록</h2>
+        <p class="section-desc">중·고등학교 및 대학 재학 중 수행한 주요 프로젝트, 수상, 활동 내역입니다. (최신순 정렬)</p>
+      </div>
+      <div class="table-wrapper">
+        <table class="achievement-table">
+          <caption>시기별 실적 목록 (시기, 분류, 내용, 본인 역할)</caption>
+          <thead>
+            <tr>
+              <th scope="col">시기</th>
+              <th scope="col">분류</th>
+              <th scope="col">내용</th>
+              <th scope="col">본인 역할</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-date">2026.05</td>
+              <td class="col-category"><span class="badge badge-project">프로젝트</span></td>
+              <td class="col-content"><a href="#project-detail" class="inline-anchor">대학생 때 AI를 활용하여 간단한 게임 제작 활동</a></td>
+              <td class="col-role">기획 및 AI 프롬프트 설계·구현</td>
+            </tr>
+            <tr>
+              <td class="col-date">2023.12</td>
+              <td class="col-category"><span class="badge badge-award">수상</span></td>
+              <td class="col-content">고등학교 재학 중 모범적인 교내외 봉사활동 공로로 봉사상 수상</td>
+              <td class="col-role">수상자 (봉사활동 참여)</td>
+            </tr>
+            <tr>
+              <td class="col-date">2021.02</td>
+              <td class="col-category"><span class="badge badge-award">수상</span></td>
+              <td class="col-content">중학교 3년 전 과정 성실 출석으로 개근상 수상</td>
+              <td class="col-role">수상자</td>
+            </tr>
+            <tr>
+              <td class="col-date">2020.11</td>
+              <td class="col-category"><span class="badge badge-activity">활동</span></td>
+              <td class="col-content">중학교 도서관 도서 정리 및 대출·반납 지원 봉사활동</td>
+              <td class="col-role">도서관 봉사 도우미</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="courses" class="card-section">
+      <div class="section-header">
+        <h2>이번 학기(2026-2) 수강 과목</h2>
+        <p class="section-desc">소프트웨어 전공 역량과 문화·예술 콘텐츠 융합 시각을 넓히기 위해 수강 중인 과목 목록입니다.</p>
+      </div>
+      <ul class="course-list">
+        <li class="course-item course-featured">
+          <span class="course-type type-major">전공</span>
+          <a href="#weekly-links" class="course-link">웹프로그래밍 및 AI에이전트 활용</a>
+          <span class="course-hint">주차별 실습 이동 ↓</span>
+        </li>
+        <li class="course-item">
+          <span class="course-type type-liberal">교양</span>
+          <span class="course-name">문화예술리서랩:연구설계와 논문쓰기</span>
+        </li>
+        <li class="course-item">
+          <span class="course-type type-liberal">교양</span>
+          <span class="course-name">문화콘텐츠경영</span>
+        </li>
+        <li class="course-item">
+          <span class="course-type type-liberal">교양</span>
+          <span class="course-name">문화법</span>
+        </li>
+        <li class="course-item">
+          <span class="course-type type-liberal">교양</span>
+          <span class="course-name">시각예술경영론</span>
+        </li>
+        <li class="course-item">
+          <span class="course-type type-liberal">교양</span>
+          <span class="course-name">K-콘텐츠디자인</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="weekly-links" class="card-section">
+      <div class="section-header">
+        <h2>웹프로그래밍 및 AI에이전트 활용 주차별 링크</h2>
+        <p class="section-desc">1주차부터 15주차까지의 실습 페이지 현황입니다. 진행 완료된 주차와 예정 주차는 색상으로 구분됩니다.</p>
+        <div class="status-legend" aria-label="주차 상태 범례">
+          <span class="legend-item"><span class="legend-dot dot-completed"></span>진행 완료 (클릭 시 이동)</span>
+          <span class="legend-item"><span class="legend-dot dot-upcoming"></span>예정 (링크 없음)</span>
+        </div>
+      </div>
+      <ol class="week-grid">
+        <li class="week-card week-upcoming">
+          <span class="week-num">1주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">2주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">3주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">4주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">5주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">6주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">7주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">8주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">9주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">10주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">11주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">12주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">13주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">14주차</span>
+          <span class="week-status">예정</span>
+        </li>
+        <li class="week-card week-upcoming">
+          <span class="week-num">15주차</span>
+          <span class="week-status">예정</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="skills" class="card-section">
+      <div class="section-header">
+        <h2>관심 기술 및 역량 (추가 요구사항 A-01)</h2>
+        <p class="section-desc">웹프로그래밍과 인공지능 관심 분야를 중심으로 학습 및 활용 중인 기술 스택입니다.</p>
+      </div>
+      <div class="skill-columns">
+        <div class="skill-group">
+          <h3>웹프로그래밍 (Web Programming)</h3>
+          <ul class="skill-list">
+            <li class="skill-item">
+              <span class="skill-name">HTML5 시맨틱 마크업 및 웹 표준</span>
+              <span class="level-badge level-applied">활용</span>
+            </li>
+            <li class="skill-item">
+              <span class="skill-name">CSS3 반응형 레이아웃 (Flexbox / Grid)</span>
+              <span class="level-badge level-applied">활용</span>
+            </li>
+            <li class="skill-item">
+              <span class="skill-name">JavaScript 기반 웹 인터랙션 구현</span>
+              <span class="level-badge level-basic">기초</span>
+            </li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>인공지능 및 융합 활용 (AI &amp; Content)</h3>
+          <ul class="skill-list">
+            <li class="skill-item">
+              <span class="skill-name">생성형 AI 에이전트 프롬프트 엔지니어링</span>
+              <span class="level-badge level-applied">활용</span>
+            </li>
+            <li class="skill-item">
+              <span class="skill-name">AI 코드 보조 도구를 활용한 게임 프로토타이핑</span>
+              <span class="level-badge level-applied">활용</span>
+            </li>
+            <li class="skill-item">
+              <span class="skill-name">문화·시각예술 콘텐츠 기획 및 웹 디자인 접목</span>
+              <span class="level-badge level-basic">기초</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="project-detail" class="card-section">
+      <div class="section-header">
+        <h2>대표 활동 상세 소개 (추가 요구사항 A-02)</h2>
+        <p class="section-desc">실적 목록에 기재된 주요 대학 활동의 구체적인 수행 내용과 학습 성과입니다.</p>
+      </div>
+      <article class="project-card">
+        <h3 class="project-title">AI를 활용한 간단한 게임 제작 활동</h3>
+        <dl class="project-meta">
+          <div class="meta-row">
+            <dt>제작 배경</dt>
+            <dd>관심 분야인 웹프로그래밍과 인공지능을 결합하여, AI 에이전트와의 협업으로 아이디어를 빠르게 동작하는 게임으로 구현하는 과정을 경험하고자 시작했습니다.</dd>
+          </div>
+          <div class="meta-row">
+            <dt>활용 기술</dt>
+            <dd>HTML5, CSS3, JavaScript 및 생성형 AI 코딩 에이전트</dd>
+          </div>
+          <div class="meta-row">
+            <dt>주요 역할</dt>
+            <dd>게임 규칙 및 화면 구성 기획, 단계별 프롬프트 작성, 생성된 코드 검증 및 오류 수정</dd>
+          </div>
+          <div class="meta-row">
+            <dt>배운 점</dt>
+            <dd>AI가 생성한 결과물을 그대로 수용하기보다 요구사항과 동작 기준에 맞추어 직접 검증하고 수정하는 과정의 중요성을 체득했습니다.</dd>
+          </div>
         </dl>
-    </body>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="last-updated">최종 수정일: 2026-10-20</p>
+    </div>
+  </footer>
+</body>
 </html>
