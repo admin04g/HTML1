@@ -1,0 +1,531 @@
+/* 기본 초기화 및 공통 스타일 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  background-color: #f4f6f9;
+  color: #1e293b;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* F-01 & F-02: 상단 헤더 영역 (1280px 첫 화면 내 완벽 표시) */
+.site-header {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 32px 0;
+  border-bottom: 4px solid #2563eb;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title-group {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nickname {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.affiliation {
+  font-size: 16px;
+  font-weight: 500;
+  color: #93c5fd;
+  background-color: #1e293b;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #334155;
+}
+
+.intro-line {
+  font-size: 16px;
+  color: #cbd5e1;
+}
+
+.contact-channel {
+  flex-shrink: 0;
+}
+
+.github-link {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #3b82f6;
+  transition: background-color 0.2s ease;
+}
+
+.github-link:hover,
+.github-link:focus {
+  background-color: #1d4ed8;
+  text-decoration: none;
+}
+
+/* 본문 공통 섹션 레이아웃 */
+.main-content {
+  padding-top: 32px;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.card-section {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.section-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 14px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.section-desc {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* F-03: 실적 목록 표 */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.achievement-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 15px;
+}
+
+.achievement-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.achievement-table th,
+.achievement-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.achievement-table thead th {
+  background-color: #f8fafc;
+  color: #334155;
+  font-weight: 700;
+  font-size: 14px;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.achievement-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.col-date {
+  width: 110px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.col-category {
+  width: 110px;
+  white-space: nowrap;
+}
+
+.col-role {
+  width: 220px;
+  color: #475569;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.badge-project {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-award {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-activity {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge-cert {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+}
+
+.badge-edu {
+  background-color: #e0f2fe;
+  color: #075985;
+}
+
+.inline-anchor {
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+/* F-04: 수강 과목 목록 */
+.course-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.course-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.course-featured {
+  background-color: #eff6ff;
+  border-color: #93c5fd;
+}
+
+.course-type {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.type-major {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.type-liberal {
+  background-color: #475569;
+  color: #ffffff;
+}
+
+.course-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.course-link {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.course-hint {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* F-05: 본 과목 주차별 링크 */
+.status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.dot-completed {
+  background-color: #2563eb;
+}
+
+.dot-upcoming {
+  background-color: #cbd5e1;
+}
+
+.week-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.week-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 10px;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 76px;
+}
+
+/* 진행한 주차 스타일 (색상 구분) */
+.week-completed {
+  background-color: #eff6ff;
+  border: 1px solid #60a5fa;
+  color: #1e3a8a;
+}
+
+.week-completed a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+/* 예정 주차 스타일 (색상 구분 및 링크 없음) */
+.week-upcoming {
+  background-color: #f1f5f9;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}
+
+.week-num {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.week-status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+/* 추가 요구사항 A-01: 관심 기술 및 역량 */
+.skill-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-group {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.skill-group h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background-color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+.skill-name {
+  color: #334155;
+  font-weight: 500;
+}
+
+.level-badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.level-applied {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.level-basic {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* 추가 요구사항 A-02: 대표 활동 상세 소개 */
+.project-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meta-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.meta-row dt {
+  font-weight: 700;
+  color: #334155;
+}
+
+.meta-row dd {
+  color: #475569;
+}
+
+/* F-06: 하단 푸터 영역 */
+.site-footer {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  padding: 24px 0;
+  margin-top: 20px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.last-updated {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 반응형 미디어 쿼리 (창 크기가 변해도 배치 유지) */
+@media (max-width: 900px) {
+  .week-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .course-list,
+  .skill-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .week-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .meta-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
