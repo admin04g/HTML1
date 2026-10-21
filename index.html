@@ -26,7 +26,7 @@
     <section id="achievements" class="card-section">
       <div class="section-header">
         <h2>실적 목록</h2>
-        <p class="section-desc">중·고등학교 및 대학 재학 중 수행한 주요 프로젝트, 수상, 활동 내역입니다. (최신순 정렬)</p>
+        <p class="section-desc">중·고등학교 및 대학 재학 중 수행한 주요 프로젝트, 수상, 활동, 교육 내역입니다. (최신순 정렬)</p>
       </div>
       <div class="table-wrapper">
         <table class="achievement-table">
@@ -40,6 +40,12 @@
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td class="col-date">2026.10</td>
+              <td class="col-category"><span class="badge badge-edu">교육</span></td>
+              <td class="col-content">웹프로그래밍 및 AI에이전트 활용 주차별 실습 수행 (HTML 기본 구조, 이미지, 목록, 표, 입력 폼)</td>
+              <td class="col-role">실습 코드 작성 및 웹 배포</td>
+            </tr>
             <tr>
               <td class="col-date">2026.05</td>
               <td class="col-category"><span class="badge badge-project">프로젝트</span></td>
@@ -106,9 +112,9 @@
     <section id="weekly-links" class="card-section">
       <div class="section-header">
         <h2>웹프로그래밍 및 AI에이전트 활용 주차별 링크</h2>
-        <p class="section-desc">1주차부터 15주차까지의 실습 페이지 현황입니다. 진행 완료된 주차와 예정 주차는 색상으로 구분됩니다.</p>
-        <div class="status-legend" aria-label="주차 상태 범례">
-          <span class="legend-item"><span class="legend-dot dot-completed"></span>진행 완료 (클릭 시 이동)</span>
+        <p class="section-desc">1주차부터 15주차까지의 실습 페이지 현황입니다. 진행한 주차(파란색)는 클릭 시 해당 실습 페이지로 이동하며, 진행하지 않은 주차(회색)는 예정으로 표시됩니다.</p>
+        <div class="status-legend">
+          <span class="legend-item"><span class="legend-dot dot-completed"></span>진행 완료 (클릭 시 실습 페이지 이동)</span>
           <span class="legend-item"><span class="legend-dot dot-upcoming"></span>예정 (링크 없음)</span>
         </div>
       </div>
@@ -117,17 +123,20 @@
           <span class="week-num">1주차</span>
           <span class="week-status">예정</span>
         </li>
-        <li class="week-card week-upcoming">
+        <li class="week-card week-completed">
           <span class="week-num">2주차</span>
-          <span class="week-status">예정</span>
+          <a href="doc02.html" class="week-link">HTML 시작하기</a>
         </li>
-        <li class="week-card week-upcoming">
+        <li class="week-card week-completed">
           <span class="week-num">3주차</span>
-          <span class="week-status">예정</span>
+          <a href="doc03.html" class="week-link">이미지 불러오기</a>
         </li>
-        <li class="week-card week-upcoming">
+        <li class="week-card week-completed">
           <span class="week-num">4주차</span>
-          <span class="week-status">예정</span>
+          <div class="week-sublinks">
+            <a href="doc04-1.html" class="week-link">실습 1: 목록</a>
+            <a href="doc04-2.html" class="week-link">실습 2: 표</a>
+          </div>
         </li>
         <li class="week-card week-upcoming">
           <span class="week-num">5주차</span>
@@ -137,9 +146,9 @@
           <span class="week-num">6주차</span>
           <span class="week-status">예정</span>
         </li>
-        <li class="week-card week-upcoming">
+        <li class="week-card week-completed">
           <span class="week-num">7주차</span>
-          <span class="week-status">예정</span>
+          <a href="doc07.HTML" class="week-link">다양한 입력 폼</a>
         </li>
         <li class="week-card week-upcoming">
           <span class="week-num">8주차</span>
@@ -186,11 +195,11 @@
           <h3>웹프로그래밍 (Web Programming)</h3>
           <ul class="skill-list">
             <li class="skill-item">
-              <span class="skill-name">HTML5 시맨틱 마크업 및 웹 표준</span>
+              <span class="skill-name">HTML5 시맨틱 마크업 및 입력 폼·표·목록 구조화</span>
               <span class="level-badge level-applied">활용</span>
             </li>
             <li class="skill-item">
-              <span class="skill-name">CSS3 반응형 레이아웃 (Flexbox / Grid)</span>
+              <span class="skill-name">CSS3 외부 스타일시트 분리 및 반응형 레이아웃</span>
               <span class="level-badge level-applied">활용</span>
             </li>
             <li class="skill-item">
@@ -250,7 +259,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="last-updated">최종 수정일: 2026-10-20</p>
+      <p class="last-updated">최종 수정일: 2026-10-21</p>
     </div>
   </footer>
 </body>
