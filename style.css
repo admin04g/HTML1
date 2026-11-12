@@ -1,527 +1,276 @@
-/* 기본 초기화 및 공통 스타일 */
+/* ===== 기본 설정 ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
-  background-color: #f4f6f9;
-  color: #1e293b;
-  line-height: 1.6;
-  font-size: 16px;
+  font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+  color: #222;
+  background-color: #fff;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
-  color: #1d4ed8;
+  color: inherit;
+}
+
+/* ===== 첫 화면: 밤하늘 ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #050a1f 0%, #0d1838 55%, #1b2a55 100%);
+  color: #fff;
+}
+
+/* 별: 작은 점을 여러 개 겹쳐서 표현 */
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.stars-small {
+  background-image:
+    radial-gradient(1px 1px at 8% 12%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 18% 38%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 27% 72%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 35% 20%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 44% 55%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 52% 8%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 61% 42%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 69% 80%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 77% 25%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 86% 62%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 93% 15%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 12% 88%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 57% 90%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 90% 92%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 4% 55%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 39% 85%, #fff 50%, transparent 51%);
+  opacity: 0.7;
+}
+
+.stars-large {
+  background-image:
+    radial-gradient(2px 2px at 15% 25%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 32% 60%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 48% 30%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 66% 15%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 74% 55%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 88% 35%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 22% 78%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 81% 82%, #fff 50%, transparent 51%);
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+.cafe-name {
+  position: relative;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 800;
+  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 24px rgba(255, 244, 200, 0.35);
+}
+
+.scroll-link {
+  position: absolute;
+  bottom: 48px;
+  padding: 10px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
   text-decoration: none;
+  transition: background-color 0.2s;
 }
 
-a:hover,
-a:focus {
-  text-decoration: underline;
+.scroll-link:hover,
+.scroll-link:focus-visible {
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
-.container {
+/* ===== 메뉴 영역: 흰 바탕 ===== */
+.menu-area {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 80px 24px 40px;
 }
 
-/* F-01 & F-02: 상단 헤더 영역 (1280px 첫 화면 내 표시) */
-.site-header {
-  background-color: #0f172a;
-  color: #f8fafc;
-  padding: 28px 0;
-  border-bottom: 4px solid #2563eb;
+.menu-section {
+  margin-bottom: 72px;
 }
 
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding-bottom: 12px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid #1b2a55;
 }
 
-.profile-summary {
-  margin-right: 16px;
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-.title-group {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
+.menu-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* 사진 자리: images 폴더에 파일을 넣으면 자동으로 사진이 보임 */
+.menu-photo {
+  aspect-ratio: 1 / 1;
+  background-color: #eceef2;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-info {
+  padding: 16px;
+}
+
+.menu-name {
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
-.nickname {
-  font-size: 28px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.5px;
-  margin-right: 12px;
-}
-
-.affiliation {
-  font-size: 16px;
-  font-weight: 500;
-  color: #93c5fd;
-  background-color: #1e293b;
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid #334155;
-}
-
-.intro-line {
-  font-size: 16px;
-  color: #cbd5e1;
-}
-
-.contact-channel {
-  margin-top: 4px;
-}
-
-.github-link {
-  display: inline-block;
-  background-color: #2563eb;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: 1px solid #3b82f6;
-  transition: background-color 0.2s ease;
-}
-
-.github-link:hover,
-.github-link:focus {
-  background-color: #1d4ed8;
-  text-decoration: none;
-}
-
-/* 본문 공통 섹션 레이아웃 */
-.main-content {
-  padding-top: 32px;
-  padding-bottom: 48px;
-}
-
-.card-section {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 28px;
-  margin-bottom: 28px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
-}
-
-.section-header {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 14px;
-}
-
-.section-header h2 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 4px;
-}
-
-.section-desc {
-  font-size: 14px;
-  color: #64748b;
-}
-
-/* F-03: 실적 목록 표 */
-.table-wrapper {
-  overflow-x: auto;
-}
-
-.achievement-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 15px;
-}
-
-.achievement-table caption {
-  font-size: 13px;
-  color: #64748b;
-  text-align: left;
-  padding-bottom: 8px;
-}
-
-.achievement-table th,
-.achievement-table td {
-  padding: 14px 16px;
-  border-bottom: 1px solid #e2e8f0;
-  vertical-align: middle;
-}
-
-.achievement-table thead th {
-  background-color: #f8fafc;
-  color: #334155;
-  font-weight: 700;
-  font-size: 14px;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 2px solid #cbd5e1;
-}
-
-.achievement-table tbody tr:hover {
-  background-color: #f8fafc;
-}
-
-.col-date {
-  width: 110px;
-  font-weight: 600;
-  color: #334155;
-  white-space: nowrap;
-}
-
-.col-category {
-  width: 110px;
-  white-space: nowrap;
-}
-
-.col-role {
-  width: 220px;
-  color: #475569;
-}
-
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 13px;
-  font-weight: 600;
-  border-radius: 6px;
-  text-align: center;
-}
-
-.badge-project {
-  background-color: #dbeafe;
-  color: #1e40af;
-}
-
-.badge-award {
-  background-color: #fef3c7;
-  color: #92400e;
-}
-
-.badge-activity {
-  background-color: #dcfce7;
-  color: #166534;
-}
-
-.badge-cert {
-  background-color: #f3e8ff;
-  color: #6b21a8;
-}
-
-.badge-edu {
-  background-color: #e0f2fe;
-  color: #075985;
-}
-
-.inline-anchor {
-  font-weight: 600;
-  color: #1d4ed8;
-}
-
-/* F-04: 수강 과목 목록 */
-.course-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 12px;
-}
-
-.course-item {
+.menu-temp {
   display: flex;
-  align-items: center;
-  padding: 14px 16px;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
-.course-featured {
-  background-color: #eff6ff;
-  border-color: #93c5fd;
-}
-
-.course-type {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin-right: 12px;
-}
-
-.type-major {
-  background-color: #1d4ed8;
-  color: #ffffff;
-}
-
-.type-liberal {
-  background-color: #475569;
-  color: #ffffff;
-}
-
-.course-name {
-  font-size: 15px;
-  font-weight: 500;
-  color: #1e293b;
-}
-
-.course-link {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1d4ed8;
-}
-
-.course-hint {
-  margin-left: auto;
-  font-size: 12px;
+.temp {
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #2563eb;
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
-/* F-05: 본 과목 주차별 링크 */
-.status-legend {
+.hot {
+  color: #c0392b;
+  background-color: #fdecea;
+}
+
+.ice {
+  color: #1f5fa8;
+  background-color: #e8f1fb;
+}
+
+.menu-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1b2a55;
+}
+
+/* ===== 매장 정보 ===== */
+.store-info {
+  margin-bottom: 40px;
+}
+
+.info-row {
+  display: flex;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-row dt {
+  width: 80px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ===== 푸터 ===== */
+.site-footer {
+  padding: 32px 24px;
+  background-color: #f6f7f9;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.weekly-links {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 10px;
-  font-size: 13px;
-  color: #475569;
-}
-
-.legend-item {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 18px;
-}
-
-.legend-dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 3px;
-  margin-right: 6px;
-}
-
-.dot-completed {
-  background-color: #2563eb;
-}
-
-.dot-upcoming {
-  background-color: #cbd5e1;
-}
-
-.week-grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 12px;
-}
-
-.week-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 14px 10px;
-  border-radius: 8px;
-  text-align: center;
-  min-height: 86px;
+  gap: 8px 16px;
+  margin-bottom: 16px;
 }
 
-/* 진행한 주차 스타일 (색상 구분) */
-.week-completed {
-  background-color: #eff6ff;
-  border: 2px solid #3b82f6;
-  color: #1e3a8a;
+.weekly-label {
+  font-weight: 600;
+  color: #555;
 }
 
-.week-link {
-  display: inline-block;
-  margin-top: 4px;
-  padding: 3px 10px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #ffffff;
-  background-color: #2563eb;
-  border-radius: 6px;
-}
-
-.week-link:hover,
-.week-link:focus {
-  background-color: #1d4ed8;
+.weekly-links a {
   text-decoration: none;
 }
 
-.week-sublinks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+.weekly-links a:hover {
+  text-decoration: underline;
 }
 
-/* 예정 주차 스타일 (색상 구분 및 링크 없음) */
-.week-upcoming {
-  background-color: #f1f5f9;
-  border: 1px dashed #cbd5e1;
-  color: #64748b;
-}
-
-.week-num {
-  font-size: 15px;
-  font-weight: 700;
+.copyright {
   margin-bottom: 4px;
 }
 
-.week-status {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background-color: #e2e8f0;
-  color: #475569;
-}
-
-/* 추가 요구사항 A-01: 관심 기술 및 역량 */
-.skill-columns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-}
-
-.skill-group {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 18px;
-}
-
-.skill-group h3 {
-  font-size: 16px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 12px;
-}
-
-.skill-list {
-  list-style: none;
-}
-
-.skill-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 10px 14px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  border: 1px solid #e2e8f0;
-  font-size: 14px;
-}
-
-.skill-name {
-  color: #334155;
-  font-weight: 500;
-  margin-right: 8px;
-}
-
-.level-badge {
-  font-size: 12px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.level-applied {
-  background-color: #dbeafe;
-  color: #1e40af;
-}
-
-.level-basic {
-  background-color: #f1f5f9;
-  color: #475569;
-}
-
-/* 추가 요구사항 A-02: 대표 활동 상세 소개 */
-.project-card {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-left: 4px solid #2563eb;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.project-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 14px;
-}
-
-.meta-row {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  grid-gap: 12px;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.meta-row dt {
-  font-weight: 700;
-  color: #334155;
-}
-
-.meta-row dd {
-  color: #475569;
-}
-
-/* F-06: 하단 푸터 영역 */
-.site-footer {
-  background-color: #0f172a;
-  color: #cbd5e1;
-  padding: 24px 0;
-  margin-top: 20px;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.last-updated {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* 반응형 미디어 쿼리 (창 크기가 변해도 배치 유지) */
+/* ===== 반응형 ===== */
 @media (max-width: 900px) {
-  .week-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .course-list,
-  .skill-columns {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .week-grid {
+  .menu-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .meta-row {
-    grid-template-columns: 1fr;
+}
+
+@media (max-width: 520px) {
+  .menu-area {
+    padding: 56px 16px 24px;
   }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* 휴대폰: 사진은 왼쪽, 정보는 오른쪽 */
+  .menu-card {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-photo {
+    width: 104px;
+    flex-shrink: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .stars-large { animation: none; }
 }
